@@ -1,0 +1,385 @@
+{
+  "api": {
+    "name": "WifiPlugin",
+    "slug": "wifiplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "scanWifi",
+        "signature": "() => Promise<ScanWifiResult>",
+        "parameters": [],
+        "returns": "Promise<ScanWifiResult>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "ScanWifiResult"
+        ],
+        "slug": "scanwifi"
+      },
+      {
+        "name": "getCurrentWifi",
+        "signature": "() => Promise<GetCurrentWifiResult>",
+        "parameters": [],
+        "returns": "Promise<GetCurrentWifiResult>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "GetCurrentWifiResult"
+        ],
+        "slug": "getcurrentwifi"
+      },
+      {
+        "name": "connectToWifiBySsidAndPassword",
+        "signature": "(connectToWifiRequest: ConnectToWifiRequest) => Promise<ConnectToWifiResult>",
+        "parameters": [
+          {
+            "name": "connectToWifiRequest",
+            "docs": "",
+            "type": "ConnectToWifiRequest"
+          }
+        ],
+        "returns": "Promise<ConnectToWifiResult>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "ConnectToWifiResult",
+          "ConnectToWifiRequest"
+        ],
+        "slug": "connecttowifibyssidandpassword"
+      },
+      {
+        "name": "connectToWifiBySsidPrefixAndPassword",
+        "signature": "(connectToWifiPrefixRequest: ConnectToWifiPrefixRequest) => Promise<ConnectToWifiResult>",
+        "parameters": [
+          {
+            "name": "connectToWifiPrefixRequest",
+            "docs": "",
+            "type": "ConnectToWifiPrefixRequest"
+          }
+        ],
+        "returns": "Promise<ConnectToWifiResult>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "ConnectToWifiResult",
+          "ConnectToWifiPrefixRequest"
+        ],
+        "slug": "connecttowifibyssidprefixandpassword"
+      },
+      {
+        "name": "checkPermissions",
+        "signature": "() => Promise<PermissionStatus>",
+        "parameters": [],
+        "returns": "Promise<PermissionStatus>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PermissionStatus"
+        ],
+        "slug": "checkpermissions"
+      },
+      {
+        "name": "requestPermissions",
+        "signature": "() => Promise<PermissionStatus>",
+        "parameters": [],
+        "returns": "Promise<PermissionStatus>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PermissionStatus"
+        ],
+        "slug": "requestpermissions"
+      },
+      {
+        "name": "disconnectAndForget",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "disconnectandforget"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "ScanWifiResult",
+      "slug": "scanwifiresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "wifis",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "WifiEntry"
+          ],
+          "type": "WifiEntry[]"
+        }
+      ]
+    },
+    {
+      "name": "WifiEntry",
+      "slug": "wifientry",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "bssid",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "capabilities",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "WifiCapability"
+          ],
+          "type": "WifiCapability[]"
+        },
+        {
+          "name": "ssid",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "SpecialSsid"
+          ],
+          "type": "string"
+        },
+        {
+          "name": "level",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "isCurrentWifi",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "GetCurrentWifiResult",
+      "slug": "getcurrentwifiresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "currentWifi",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "WifiEntry"
+          ],
+          "type": "WifiEntry"
+        }
+      ]
+    },
+    {
+      "name": "ConnectToWifiResult",
+      "slug": "connecttowifiresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "wasSuccess",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "true"
+        },
+        {
+          "name": "wifi",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "WifiEntry"
+          ],
+          "type": "WifiEntry"
+        }
+      ]
+    },
+    {
+      "name": "ConnectToWifiRequest",
+      "slug": "connecttowifirequest",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "ssid",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "password",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        }
+      ]
+    },
+    {
+      "name": "ConnectToWifiPrefixRequest",
+      "slug": "connecttowifiprefixrequest",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "ssidPrefix",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "password",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        }
+      ]
+    },
+    {
+      "name": "PermissionStatus",
+      "slug": "permissionstatus",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "LOCATION",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "PermissionState"
+          ],
+          "type": "PermissionState"
+        },
+        {
+          "name": "NETWORK",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "PermissionState"
+          ],
+          "type": "PermissionState"
+        }
+      ]
+    }
+  ],
+  "enums": [
+    {
+      "name": "WifiCapability",
+      "slug": "wificapability",
+      "members": [
+        {
+          "name": "WPA2_PSK_CCM",
+          "value": "'WPA2-PSK-CCM'",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "RSN_PSK_CCMP",
+          "value": "'RSN-PSK-CCMP'",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "RSN_SAE_CCM",
+          "value": "'RSN-SAE-CCM'",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "WPA2_EAP_SHA1_CCM",
+          "value": "'WPA2-EAP/SHA1-CCM'",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "RSN_EAP_SHA1_CCMP",
+          "value": "'RSN-EAP/SHA1-CCMP'",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "ESS",
+          "value": "'ESS'",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "ES",
+          "value": "'ES'",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "WP",
+          "value": "'WP'",
+          "tags": [],
+          "docs": ""
+        }
+      ]
+    },
+    {
+      "name": "SpecialSsid",
+      "slug": "specialssid",
+      "members": [
+        {
+          "name": "HIDDEN",
+          "value": "'[HIDDEN_SSID]'",
+          "tags": [],
+          "docs": ""
+        }
+      ]
+    }
+  ],
+  "typeAliases": [
+    {
+      "name": "PermissionState",
+      "slug": "permissionstate",
+      "docs": "",
+      "types": [
+        {
+          "text": "'prompt'",
+          "complexTypes": []
+        },
+        {
+          "text": "'prompt-with-rationale'",
+          "complexTypes": []
+        },
+        {
+          "text": "'granted'",
+          "complexTypes": []
+        },
+        {
+          "text": "'denied'",
+          "complexTypes": []
+        }
+      ]
+    }
+  ],
+  "pluginConfigs": []
+}
